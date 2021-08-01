@@ -25,4 +25,15 @@ export class FormLoginComponent implements OnInit {
     console.log(this.formLogin.value)
   }
 
+  get correoNoValido(): boolean{
+    // retorna un true o false
+    return this.formLogin.get('email')!.invalid && this.formLogin.get('email')!.touched;
+  }
+
+  get passwordNoValido(): boolean{
+    // retorna un true o false
+    return this.formLogin.get('password')!.invalid && this.formLogin.get('password')!.touched;
+  }
+ 
+
 }

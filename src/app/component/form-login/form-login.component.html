@@ -4,6 +4,7 @@
             [formGroup]="formLogin" 
             (ngSubmit)="send()"
             class="form-login w-4"
+            autocomplete="off"
         >
             <div class="field mt-5">
                 <span class="p-float-label">
@@ -13,8 +14,12 @@
                         pInputText 
                         class="w-full"
                         formControlName="email"
+                        [class.is-invalid]="correoNoValido"
                     /> 
                     <label for="float-input">Username</label>
+                    <small *ngIf="correoNoValido" class="text-danger">
+                        El valor es requerido y debe ser mayor a 5 caracteres
+                    </small>
                 </span>
             </div>
             <div class="field mt-5">
@@ -26,6 +31,9 @@
                         formControlName="password"
                     />
                     <label for="float-input">Password</label>
+                    <small *ngIf="passwordNoValido" class="text-danger">
+                        Contraseña no validad
+                    </small>
                 </span>
             </div>
             <button 
