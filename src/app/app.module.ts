@@ -5,14 +5,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 
+import { FormsModule } from '@angular/forms';
+
+// Modulos de PrimeNg
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { FormLoginComponent } from './component/form-login/form-login.component';
+import {InputMaskModule} from 'primeng/inputmask';
+import {CalendarModule} from 'primeng/calendar';
+import {InputSwitchModule} from 'primeng/inputswitch';
+
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    FormLoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    InputMaskModule,
+    CalendarModule,
+    InputSwitchModule
   ],
   providers: [],
   bootstrap: [AppComponent]
