@@ -1,3 +1,4 @@
+import { CookieService } from 'ngx-cookie-service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,6 +8,8 @@ import { LoginComponent } from './pages/login/login.component';
 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+// Modulos para servicio http
+import { HttpClientModule } from '@angular/common/http';
 
 // Modulos de PrimeNg
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -17,6 +20,7 @@ import {InputSwitchModule} from 'primeng/inputswitch';
 import {InputTextModule} from 'primeng/inputtext';
 import {PasswordModule} from 'primeng/password';
 import {ButtonModule} from 'primeng/button';
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
 
 
 
@@ -25,7 +29,8 @@ import {ButtonModule} from 'primeng/button';
   declarations: [
     AppComponent,
     LoginComponent,
-    FormLoginComponent
+    FormLoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +43,10 @@ import {ButtonModule} from 'primeng/button';
     InputSwitchModule,
     InputTextModule,
     PasswordModule,
-    ButtonModule
+    ButtonModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
