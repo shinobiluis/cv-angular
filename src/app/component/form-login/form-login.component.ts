@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 
@@ -9,13 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormLoginComponent implements OnInit {
   
-  public val1: string = '';
-  public value: Date = new Date;
-  public checked: boolean = true;
+  public formLogin!: FormGroup;
 
-  constructor() { }
+  constructor( private formBuilder: FormBuilder ) { }
 
   ngOnInit(): void {
+    this.formLogin = this.formBuilder.group({
+      email: [ '', [Validators.required, Validators.email]],
+      password: [ '', [Validators.required, Validators.minLength( 6 )]]
+    })
+  }
+
+  send(): any{
+    console.log(this.formLogin.value)
   }
 
 }

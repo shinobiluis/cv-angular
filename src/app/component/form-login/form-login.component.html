@@ -1,19 +1,47 @@
 <div class="wrapper-login flex flex-wrap bg-white">
     <div class="flex-1 flex align-items-center justify-content-center shadow-3">
-        <form action="" class="form-login w-4">
+        <form  
+            [formGroup]="formLogin" 
+            (ngSubmit)="send()"
+            class="form-login w-4"
+        >
             <div class="field mt-5">
                 <span class="p-float-label">
-                    <input id="float-input" type="text" pInputText class="w-full"> 
+                    <input 
+                        id="float-input" 
+                        type="text" 
+                        pInputText 
+                        class="w-full"
+                        formControlName="email"
+                    /> 
                     <label for="float-input">Username</label>
                 </span>
             </div>
             <div class="field mt-5">
                 <span class="p-float-label">
-                    <input type="password" pInputText  class="w-full"/>
+                    <input 
+                        type="password" 
+                        pInputText  
+                        class="w-full"
+                        formControlName="password"
+                    />
                     <label for="float-input">Password</label>
                 </span>
             </div>
-            <button pButton type="button" label="Acceder" class="w-full"></button>
+            <button 
+                [disabled]="formLogin.invalid"
+                pButton 
+                label="Acceder" 
+                class="w-full"
+            ></button>
+            <div>
+                Valido: {{ formLogin.valid | json }}
+            </div>
+            <div>
+                <pre>
+                    {{ formLogin.value | json }}
+                </pre>
+            </div>
         </form>
     </div>
 </div>

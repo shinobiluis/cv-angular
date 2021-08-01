@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Modulos de PrimeNg
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -31,6 +32,7 @@ import {ButtonModule} from 'primeng/button';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     InputMaskModule,
     CalendarModule,
     InputSwitchModule,
