@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
 
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // Modulos de PrimeNg
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -13,6 +14,11 @@ import { FormLoginComponent } from './component/form-login/form-login.component'
 import {InputMaskModule} from 'primeng/inputmask';
 import {CalendarModule} from 'primeng/calendar';
 import {InputSwitchModule} from 'primeng/inputswitch';
+import {InputTextModule} from 'primeng/inputtext';
+import {PasswordModule} from 'primeng/password';
+import {ButtonModule} from 'primeng/button';
+
+
 
 
 @NgModule({
@@ -26,9 +32,13 @@ import {InputSwitchModule} from 'primeng/inputswitch';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
     InputMaskModule,
     CalendarModule,
-    InputSwitchModule
+    InputSwitchModule,
+    InputTextModule,
+    PasswordModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

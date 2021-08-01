@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~normalize.css';
+@import './css/colores.css';
+
+
+.bg-white{
+    background-color: var(--main-bg-fondo);
+}

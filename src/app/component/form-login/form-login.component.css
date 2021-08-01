@@ -1,0 +1,10 @@
+.wrapper-login{
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    border-radius: 20px 0 0 20px;
+}
+.btn-login{
+    width: 100%;
+}
