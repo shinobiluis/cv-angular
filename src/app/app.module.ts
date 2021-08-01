@@ -13,6 +13,11 @@ import { FormLoginComponent } from './component/form-login/form-login.component'
 import {InputMaskModule} from 'primeng/inputmask';
 import {CalendarModule} from 'primeng/calendar';
 import {InputSwitchModule} from 'primeng/inputswitch';
+import {InputTextModule} from 'primeng/inputtext';
+import {PasswordModule} from 'primeng/password';
+import {ButtonModule} from 'primeng/button';
+
+
 
 
 @NgModule({
@@ -28,7 +33,10 @@ import {InputSwitchModule} from 'primeng/inputswitch';
     FormsModule,
     InputMaskModule,
     CalendarModule,
-    InputSwitchModule
+    InputSwitchModule,
+    InputTextModule,
+    PasswordModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
