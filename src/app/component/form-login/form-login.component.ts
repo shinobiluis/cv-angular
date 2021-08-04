@@ -30,11 +30,9 @@ export class FormLoginComponent implements OnInit {
   }
 
   send(): any{
-   
-    console.log(this.formLogin.value);
     this.login.login( this.formLogin.value )
       .subscribe( (response: any) => {
-        console.log(response)
+        console.table(response)
         this.formLogin.reset();
         // le decimos al navegador que lo guarde por 4 dias y 
         // con el '/' le decimos que funciona para toda la aplicacion.
