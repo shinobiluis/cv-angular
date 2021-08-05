@@ -16,7 +16,7 @@
 }
 .wrapperContent{
     display:grid;
-    grid-template-columns: 65px 1fr;
+    grid-template-columns: 50px 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: 
       "wrapperNavbar wrapperContentMain";
