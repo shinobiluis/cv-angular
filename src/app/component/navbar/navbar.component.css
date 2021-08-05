@@ -1,19 +1,21 @@
 .nav{
-    width: 80px;
+    width: 65px;
     display: block;
 }
 .nav ul{
-    width: 80px;
-    /* position: fixed; */
+    width: 65px;
+    top: 63px;
 }
 .nav li{
+    width: 65px;
+    height: 65px;
     color: white;
 }
 nav li:hover{
     color: black;
-    background: #6f6f6f;
+    background: white;
 }
 .nav li a.active{
     color: black;
-    background: #6f6f6f;
+    background: white;
 }
