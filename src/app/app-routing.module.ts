@@ -1,3 +1,11 @@
+import { DescargarComponent } from './pages/descargar/descargar.component';
+import { PlantillaComponent } from './pages/plantilla/plantilla.component';
+import { IdiomasComponent } from './pages/idiomas/idiomas.component';
+import { DestrezasComponent } from './pages/destrezas/destrezas.component';
+import { EstudiosCertificacionesComponent } from './pages/estudios-certificaciones/estudios-certificaciones.component';
+import { ExperienciaLaboralComponent } from './pages/experiencia-laboral/experiencia-laboral.component';
+import { DescripcionComponent } from './pages/descripcion/descripcion.component';
+import { InformacionAdicionalComponent } from './pages/informacion-adicional/informacion-adicional.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { VigilanteGuard } from './vigilante.guard';
@@ -12,6 +20,14 @@ const routes: Routes = [
   { path: 'dash', component: DashboardComponent, canActivate:[ VigilanteGuard ], children:[
       { path: 'home', component: HomeComponent },
       { path: 'profile',  component: ProfileComponent },
+      { path: 'informacion-adicional',  component: InformacionAdicionalComponent },
+      { path: 'descripcion',  component: DescripcionComponent },
+      { path: 'experiencia-laboral',  component: ExperienciaLaboralComponent },
+      { path: 'estudios-y-certificaciones',  component: EstudiosCertificacionesComponent },
+      { path: 'destrezas',  component: DestrezasComponent },
+      { path: 'idiomas',  component: IdiomasComponent },
+      { path: 'plantilla',  component: PlantillaComponent },
+      { path: 'descargar',  component: DescargarComponent },
       { path: '', pathMatch: 'full', redirectTo: 'home' }
     ]
   },

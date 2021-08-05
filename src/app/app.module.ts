@@ -31,6 +31,14 @@ import { HomeComponent } from './pages/home/home.component';
 import {AvatarModule} from 'primeng/avatar';
 import {MenuModule} from 'primeng/menu';
 import {TooltipModule} from 'primeng/tooltip';
+import { InformacionAdicionalComponent } from './pages/informacion-adicional/informacion-adicional.component';
+import { DescripcionComponent } from './pages/descripcion/descripcion.component';
+import { ExperienciaLaboralComponent } from './pages/experiencia-laboral/experiencia-laboral.component';
+import { EstudiosCertificacionesComponent } from './pages/estudios-certificaciones/estudios-certificaciones.component';
+import { DestrezasComponent } from './pages/destrezas/destrezas.component';
+import { IdiomasComponent } from './pages/idiomas/idiomas.component';
+import { PlantillaComponent } from './pages/plantilla/plantilla.component';
+import { DescargarComponent } from './pages/descargar/descargar.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +52,15 @@ import {TooltipModule} from 'primeng/tooltip';
     FooterComponent,
     NavbarComponent,
     ProfileComponent,
-    HomeComponent
+    HomeComponent,
+    InformacionAdicionalComponent,
+    DescripcionComponent,
+    ExperienciaLaboralComponent,
+    EstudiosCertificacionesComponent,
+    DestrezasComponent,
+    IdiomasComponent,
+    PlantillaComponent,
+    DescargarComponent
   ],
   imports: [
     BrowserModule,
