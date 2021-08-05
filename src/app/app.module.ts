@@ -21,16 +21,30 @@ import {InputTextModule} from 'primeng/inputtext';
 import {PasswordModule} from 'primeng/password';
 import {ButtonModule} from 'primeng/button';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
-
-
-
+import { HeaderComponent } from './component/header/header.component';
+import { AsideComponent } from './component/aside/aside.component';
+import { MainComponent } from './component/main/main.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { NavbarComponent } from './component/navbar/navbar.component';
+import { ProfileComponent } from './pages/profile/profile.component';
+import { HomeComponent } from './pages/home/home.component';
+import {AvatarModule} from 'primeng/avatar';
+import {MenuModule} from 'primeng/menu';
+import {TooltipModule} from 'primeng/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     FormLoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeaderComponent,
+    AsideComponent,
+    MainComponent,
+    FooterComponent,
+    NavbarComponent,
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +58,10 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
     InputTextModule,
     PasswordModule,
     ButtonModule,
-    HttpClientModule
+    HttpClientModule,
+    AvatarModule,
+    MenuModule,
+    TooltipModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

@@ -1,0 +1,17 @@
+<header class="bg-gray-900 p-1 sticky top-0">
+    <div class="container mx-auto">
+        <div class="flex justify-between items-stretch">
+            <figure class="logoHeader flex flex-nowrap">
+                <img src="assets/logos/cv_logo.png" alt="">
+                <figcaption class="text-white mx-3 pt-3.5">
+                    Creador CV
+                </figcaption>
+            </figure>
+            <div>
+                <p-avatar label="P" styleClass="p-mr-2" size="large" shape="circle" (click)="menu.toggle($event)"></p-avatar>
+                <p-menu #menu [popup]="true" [model]="items"></p-menu>
+            </div>
+        </div>
+    </div>
+</header>
+  

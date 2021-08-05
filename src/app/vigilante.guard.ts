@@ -29,6 +29,8 @@ export class VigilanteGuard implements CanActivate {
     this.redirect( cookie );
     // recuerta que cookie es true o false, si es true se muestra la pagina.
     return cookie;
+    // return true;
+
   }
   
 }

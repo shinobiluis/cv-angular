@@ -1,0 +1,19 @@
+.nav{
+    width: 80px;
+    display: block;
+}
+.nav ul{
+    width: 80px;
+    /* position: fixed; */
+}
+.nav li{
+    color: white;
+}
+nav li:hover{
+    color: black;
+    background: #6f6f6f;
+}
+.nav li a.active{
+    color: black;
+    background: #6f6f6f;
+}

@@ -1,0 +1,33 @@
+.wrapperDash{
+    display:grid;
+    min-height: 100vh;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 63px 1fr;
+    grid-template-areas: 
+      "wrapperHeader wrapperHeader"
+      "wrapperContent wrapperContent";
+}
+
+.wrapperHeader{
+    grid-area: wrapperHeader;
+}
+.wrapperContent{
+    grid-area: wrapperContent;
+}
+.wrapperContent{
+    display:grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+      "wrapperNavbar wrapperContentMain";
+}
+.wrapperNavbar{
+    grid-area: wrapperNavbar;
+}
+.wrapperContentMain{
+    grid-area: wrapperContentMain;
+    border: 2px solid green;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 30px;
+}
