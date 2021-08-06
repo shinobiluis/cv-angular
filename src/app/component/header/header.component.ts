@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { LoginService } from './../../services/login.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   items!: any[];
-  constructor() { }
+  constructor(
+    private login: LoginService,
+    private cookieService: CookieService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.items = [
@@ -22,7 +29,12 @@ export class HeaderComponent implements OnInit {
   }
 
   delete(): any {
-    alert("hola");
+    this.login.logout()
+      .subscribe( (response: any) => {
+        console.log( response )
+        this.cookieService.delete('acess_token', '/');
+        this.router.navigate(['login'])
+      } );
   }
 
 }

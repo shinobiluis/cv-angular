@@ -25,7 +25,6 @@ export class VigilanteGuard implements CanActivate {
     // al ussar check la respuesta se vuelve true o false
     // se puede usar get para obtener el valor
     const cookie = this.cookieService.check('acess_token');
-    console.log( "token", this.cookieService.get('acess_token') )
     this.redirect( cookie );
     // recuerta que cookie es true o false, si es true se muestra la pagina.
     return cookie;

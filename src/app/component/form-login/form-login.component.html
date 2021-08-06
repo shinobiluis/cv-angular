@@ -1,5 +1,7 @@
-<div class="wrapper-login flex flex-wrap bg-white">
-    <div class="flex-1 flex align-items-center justify-content-center shadow-3">
+<div class="wrapper-login flex flex-wrap ">
+    <div class="flex-1 flex flex-col align-items-center justify-content-center shadow-3">
+        <img src="../../../assets/logos/logo_blanco.png" class="w-1" alt="">
+        <h1 class="text-white">Inicia sesión.</h1>
         <form  
             [formGroup]="formLogin" 
             (ngSubmit)="send()"
@@ -7,34 +9,45 @@
             autocomplete="off"
         >
             <div class="field mt-5">
-                <span class="p-float-label">
+                <div class="flex flex-col">
+                    <label class="text-white" for="user">Usuario:</label>
                     <input 
-                        id="float-input" 
+                        id="user" 
                         type="text" 
-                        pInputText 
-                        class="w-full"
+                        aria-describedby="user-help" 
+                        class="w-full" 
+                        pInputText
                         formControlName="email"
-                        [class.is-invalid]="correoNoValido"
-                    /> 
-                    <label for="float-input">Username</label>
-                    <small *ngIf="correoNoValido" class="text-danger">
-                        El valor es requerido y debe ser mayor a 5 caracteres
+                    />
+                    <small 
+                        *ngIf="correoNoValido" 
+                        id="user-help" 
+                        class="p-error"
+                    >
+                        El correo es requerido.
                     </small>
-                </span>
+                </div>
             </div>
             <div class="field mt-5">
-                <span class="p-float-label">
+                <div class="flex flex-col">
+                    <label class="text-white" for="password">Password:</label>
                     <input 
+                        id="password" 
                         type="password" 
-                        pInputText  
-                        class="w-full"
+                        aria-describedby="password-help" 
+                        class="w-full" 
+                        pInputText
                         formControlName="password"
                     />
-                    <label for="float-input">Password</label>
-                    <small *ngIf="passwordNoValido" class="text-danger">
-                        Contraseña no validad
+                    <small 
+                        *ngIf="passwordNoValido" 
+                        id="password-help" 
+                        class="p-error"
+                    >
+                        La contraseña es requerida.
                     </small>
-                </span>
+                </div>
+                
             </div>
             <button 
                 [disabled]="formLogin.invalid"
@@ -42,14 +55,14 @@
                 label="Acceder" 
                 class="w-full"
             ></button>
-            <div>
+            <!-- <div>
                 Valido: {{ formLogin.valid | json }}
             </div>
             <div>
                 <pre>
                     {{ formLogin.value | json }}
                 </pre>
-            </div>
+            </div> -->
         </form>
     </div>
 </div>
