@@ -23,4 +23,16 @@ export class PerfilService {
       'headers': headers
     } );
   }
+
+  consultarPerfil(){
+    const token = this.cookieService.get('acess_token');
+    console.log( token )
+    const headers = { 
+      'content-type': 'application/json',
+      'Authorization': `Bearer ${token}`
+    }
+    return this.http.get('http://api-cv.kame.house/api/profile', {
+      'headers': headers
+    } );
+  }
 }

@@ -17,6 +17,7 @@ export class FormPerfilComponent implements OnInit {
 
   ngOnInit(): void {
     this.crearFormulario();
+    this.consultarPerfil();
   }
 
   crearFormulario(){
@@ -33,6 +34,21 @@ export class FormPerfilComponent implements OnInit {
       .subscribe( response => {
         console.log( response )
       })
+  }
+  consultarPerfil(){
+    this.perfil.consultarPerfil()
+      .subscribe( (response: any) =>{
+        console.log( response.data )
+        this.actualizarFormulario( response.data )  
+      })
+  }
+  actualizarFormulario( data: any ){
+    this.formPerfil.reset({
+      names: data.names,
+      surnames: data.surnames,
+      phone: data.phone,
+      job_title: data.job_title,
+    });
   }
 
 }
