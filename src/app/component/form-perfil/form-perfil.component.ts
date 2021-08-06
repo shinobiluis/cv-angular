@@ -1,3 +1,4 @@
+import { PerfilService } from './../../services/perfil.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -10,7 +11,8 @@ export class FormPerfilComponent implements OnInit {
 
   public formPerfil!: FormGroup;
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private perfil: PerfilService
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +29,10 @@ export class FormPerfilComponent implements OnInit {
   }
   send(){
     console.log(this.formPerfil.value)
+    this.perfil.guardarPerfil( this.formPerfil.value )
+      .subscribe( response => {
+        console.log( response )
+      })
   }
 
 }
