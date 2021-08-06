@@ -40,6 +40,7 @@ import { IdiomasComponent } from './pages/idiomas/idiomas.component';
 import { PlantillaComponent } from './pages/plantilla/plantilla.component';
 import { DescargarComponent } from './pages/descargar/descargar.component';
 import { FormPerfilComponent } from './component/form-perfil/form-perfil.component';
+import {ToastModule} from 'primeng/toast';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { FormPerfilComponent } from './component/form-perfil/form-perfil.compone
     HttpClientModule,
     AvatarModule,
     MenuModule,
-    TooltipModule
+    TooltipModule,
+    ToastModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]

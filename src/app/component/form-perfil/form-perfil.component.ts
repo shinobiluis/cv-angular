@@ -1,23 +1,27 @@
 import { PerfilService } from './../../services/perfil.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {MessageService} from 'primeng/api';
 
 @Component({
   selector: 'app-form-perfil',
   templateUrl: './form-perfil.component.html',
-  styleUrls: ['./form-perfil.component.css']
+  styleUrls: ['./form-perfil.component.css'],
+  providers: [MessageService]
 })
 export class FormPerfilComponent implements OnInit {
 
   public formPerfil!: FormGroup;
   constructor(
     private formBuilder: FormBuilder,
-    private perfil: PerfilService
+    private perfil: PerfilService,
+    private messageService: MessageService
   ) { }
 
   ngOnInit(): void {
     this.crearFormulario();
     this.consultarPerfil();
+    
   }
 
   crearFormulario(){
@@ -33,6 +37,7 @@ export class FormPerfilComponent implements OnInit {
     this.perfil.guardarPerfil( this.formPerfil.value )
       .subscribe( response => {
         console.log( response )
+        this.showSuccess();
       })
   }
   consultarPerfil(){
@@ -49,6 +54,14 @@ export class FormPerfilComponent implements OnInit {
       phone: data.phone,
       job_title: data.job_title,
     });
+  }
+
+  showSuccess() {
+    this.messageService.add({
+        severity:'success', 
+        summary: 'Guardado', 
+        detail: 'Perfil guardado correctamente'
+      });
   }
 
 }
