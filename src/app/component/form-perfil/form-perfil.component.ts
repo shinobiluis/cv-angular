@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-perfil',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormPerfilComponent implements OnInit {
 
-  constructor() { }
+  public formPerfil!: FormGroup;
+  constructor(
+    private formBuilder: FormBuilder
+  ) { }
 
   ngOnInit(): void {
+    this.crearFormulario();
+  }
+
+  crearFormulario(){
+    this.formPerfil = this.formBuilder.group({
+      names: ['', [Validators.required] ],
+      surnames: ['', [Validators.required] ],
+      phone: ['', [Validators.required] ],
+      job_title: ['', [Validators.required] ]
+    })
+  }
+  send(){
+    console.log(this.formPerfil.value)
   }
 
 }
