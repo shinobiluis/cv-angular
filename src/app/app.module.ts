@@ -39,6 +39,7 @@ import { DestrezasComponent } from './pages/destrezas/destrezas.component';
 import { IdiomasComponent } from './pages/idiomas/idiomas.component';
 import { PlantillaComponent } from './pages/plantilla/plantilla.component';
 import { DescargarComponent } from './pages/descargar/descargar.component';
+import { FormPerfilComponent } from './component/form-perfil/form-perfil.component';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { DescargarComponent } from './pages/descargar/descargar.component';
     DestrezasComponent,
     IdiomasComponent,
     PlantillaComponent,
-    DescargarComponent
+    DescargarComponent,
+    FormPerfilComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,53 @@
+<form action="">
+    <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col text-left">
+            <label for="nombres">Nombres:</label>
+            <input 
+                id="nombres" 
+                type="text" 
+                pInputText 
+            />
+        </div>
+        <div class="flex flex-col text-left">
+            <label for="apellido">Apellido:</label>
+            <input 
+                id="apellido" 
+                type="text" 
+                pInputText 
+            />
+        </div>
+        <div class="flex flex-col text-left">
+            <label for="email">Correo:</label>
+            <input 
+                id="email" 
+                type="text" 
+                pInputText 
+            />
+        </div>
+        <div class="flex flex-col text-left">
+            <label for="telefono">Teléfono:</label>
+            <p-inputMask 
+                mask="99-999-99999" 
+                placeholder="99-999-999999"
+                styleClass="w-full"
+            ></p-inputMask>
+        </div>
+        <div class="flex flex-col text-left">
+            <label for="titulo_profecional">Título Profesional (Este título se usa en algunos templates):</label>
+            <input 
+                id="titulo_profecional" 
+                type="text" 
+                pInputText 
+            />
+        </div>
+    </div>
+    <div class="grid grid-cols-1 mt-5"> 
+        <button 
+            pButton 
+            label="Acceder" 
+            class="w-full "
+            icon="pi pi-check"
+            iconPos="right"
+        ></button>
+    </div>
+</form>
