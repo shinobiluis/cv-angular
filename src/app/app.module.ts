@@ -41,6 +41,10 @@ import { PlantillaComponent } from './pages/plantilla/plantilla.component';
 import { DescargarComponent } from './pages/descargar/descargar.component';
 import { FormPerfilComponent } from './component/form-perfil/form-perfil.component';
 import {ToastModule} from 'primeng/toast';
+// dropzone para cargar archivos
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { DropzoneComponent } from './component/dropzone/dropzone.component';
+
 
 @NgModule({
   declarations: [
@@ -63,7 +67,8 @@ import {ToastModule} from 'primeng/toast';
     IdiomasComponent,
     PlantillaComponent,
     DescargarComponent,
-    FormPerfilComponent
+    FormPerfilComponent,
+    DropzoneComponent
   ],
   imports: [
     BrowserModule,
@@ -81,7 +86,8 @@ import {ToastModule} from 'primeng/toast';
     AvatarModule,
     MenuModule,
     TooltipModule,
-    ToastModule
+    ToastModule,
+    NgxDropzoneModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]
