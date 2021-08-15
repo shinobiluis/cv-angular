@@ -17,8 +17,11 @@ export class DropzoneComponent implements OnInit {
   ) { }
   files: File[] = [];
   public avatarImage = './assets/avatar/avatar.png';
+  public show:boolean = false;
+  display: boolean = false;
   onSelect(event:any) {
     console.log('evento',event);
+    this.show = true;
     this.files = []; // con esto logrcdamos que solo sea 1 archivo
     this.files.push(...event.addedFiles);
     const formData = new FormData();
@@ -33,6 +36,9 @@ export class DropzoneComponent implements OnInit {
         this.avatarImage = `data:image/png;base64, ${res.image}`;
         this.updateAvatar.disparadorDeAvatar.emit(this.avatarImage);
         console.log(this.avatarImage);
+        this.show = false;
+        this.display = false;
+        this.files = [];
       });
   }
   
@@ -49,6 +55,10 @@ export class DropzoneComponent implements OnInit {
       }
       
     })
+  }
+
+  showDialog() {
+    this.display = true;
   }
 
 }

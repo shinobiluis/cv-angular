@@ -1,17 +1,31 @@
-<img  
-	*ngIf="avatarImage != ''" 
-	[src]="avatarImage | safeHtml" 
-	alt=""
-	class="avatarImage"
->
-<!-- in app.component.html -->
-<ngx-dropzone [multiple]="false" (change)="onSelect($event)">
-	<ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
-	<ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
-		<ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-	</ngx-dropzone-preview>
-</ngx-dropzone>
+<div class="wrapperUploadAvatar">
+	<img  
+		*ngIf="avatarImage != ''" 
+		[src]="avatarImage | safeHtml" 
+		alt=""
+		class="avatarImage"
+	>
+	<button 
+		pButton 
+		pRipple 
+		type="button" 
+		icon="pi pi-upload" 
+		class="p-button-rounded btnUploadAvatar" 
+		(click)="showDialog()"
+	></button>
+</div>
 
-<!-- <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
-    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-</ngx-dropzone-image-preview> -->
+
+<p-dialog header="Subir Imagen de perfil" [(visible)]="display" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">   
+		<app-loading *ngIf="show"></app-loading>
+		<ngx-dropzone *ngIf="!show" [multiple]="false" (change)="onSelect($event)">
+			<ngx-dropzone-label>Subir imagen de perfil...!</ngx-dropzone-label>
+			<ngx-dropzone-preview *ngFor="let f of files" [removable]="true" (removed)="onRemove(f)">
+				<ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+			</ngx-dropzone-preview>
+		</ngx-dropzone>
+	<ng-template pTemplate="footer">
+		<p-button icon="pi pi-check" (click)="display=false" label="Cerrar" styleClass="p-button-text"></p-button>
+	</ng-template>
+</p-dialog>

@@ -41,10 +41,13 @@ import { PlantillaComponent } from './pages/plantilla/plantilla.component';
 import { DescargarComponent } from './pages/descargar/descargar.component';
 import { FormPerfilComponent } from './component/form-perfil/form-perfil.component';
 import {ToastModule} from 'primeng/toast';
+import {DialogModule} from 'primeng/dialog';
+
 // dropzone para cargar archivos
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { DropzoneComponent } from './component/dropzone/dropzone.component';
 import { SafeHtmlPipe } from './safe-html.pipe';
+import { LoadingComponent } from './component/loading/loading.component';
 
 
 @NgModule({
@@ -70,7 +73,8 @@ import { SafeHtmlPipe } from './safe-html.pipe';
     DescargarComponent,
     FormPerfilComponent,
     DropzoneComponent,
-    SafeHtmlPipe
+    SafeHtmlPipe,
+    LoadingComponent
   ],
   imports: [
     BrowserModule,
@@ -89,7 +93,8 @@ import { SafeHtmlPipe } from './safe-html.pipe';
     MenuModule,
     TooltipModule,
     ToastModule,
-    NgxDropzoneModule
+    NgxDropzoneModule,
+    DialogModule
   ],
   providers: [ CookieService ],
   bootstrap: [AppComponent]
