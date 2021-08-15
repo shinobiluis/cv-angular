@@ -50,7 +50,7 @@ export class DropzoneComponent implements OnInit {
 
     this.avatar.consultarAvatar().subscribe( (response:any) =>{
       if( response != null ){
-        console.log( 'consulta avatar', response );
+        // console.log( 'consulta avatar', response );
         this.avatarImage = `data:image/png;base64, ${response.image}`;
       }
       

@@ -27,10 +27,10 @@ export class HeaderComponent implements OnInit {
       this.imageAvatar = data;
     })
     this.avatar.consultarAvatar().subscribe( (response:any) =>{
-      console.log( 'consulta avatar', response );
+      // console.log( 'consulta avatar', response );
       if( response != null ){
         this.imageAvatar = `data:image/png;base64, ${response.image}`;
-        console.log('Este es el avatar', this.imageAvatar)
+        // console.log('Este es el avatar', this.imageAvatar)
       }
     })
     this.items = [
