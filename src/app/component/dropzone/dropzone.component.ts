@@ -1,4 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { AcutlizarAvatarFrontService } from './../../services/acutlizar-avatar-front.service';
+import { UploadAvatarService } from './../../services/upload-avatar.service';
+// import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 
@@ -10,27 +12,28 @@ import { Component, OnInit } from '@angular/core';
 export class DropzoneComponent implements OnInit {
 
   constructor(
-    private http: HttpClient
+    private avatar: UploadAvatarService,
+    private updateAvatar: AcutlizarAvatarFrontService
   ) { }
   files: File[] = [];
-
+  public avatarImage = './assets/avatar/avatar.png';
   onSelect(event:any) {
-    console.log(event);
-    this.files = [];
+    console.log('evento',event);
+    this.files = []; // con esto logrcdamos que solo sea 1 archivo
     this.files.push(...event.addedFiles);
     const formData = new FormData();
-    
     for (var i = 0; i < this.files.length; i++) { 
       formData.append("file[]", this.files[i]);
     }
-
-    console.log( formData );
-    this.http.post('http://api-cv.kame.house/api/profile/image', formData)
-    .subscribe(res => {
+    console.log( 'cuerpo antes: ',formData );
+    this.avatar.upload( formData )
+      .subscribe((res:any) => {
         console.log(res);
-        alert('Uploaded Successfully.');
-    })
-
+        // 
+        this.avatarImage = `data:image/png;base64, ${res.image}`;
+        this.updateAvatar.disparadorDeAvatar.emit(this.avatarImage);
+        console.log(this.avatarImage);
+      });
   }
   
   onRemove(event:any) {
@@ -38,6 +41,14 @@ export class DropzoneComponent implements OnInit {
     this.files.splice(this.files.indexOf(event), 1);
   }
   ngOnInit(): void {
+
+    this.avatar.consultarAvatar().subscribe( (response:any) =>{
+      if( response != null ){
+        console.log( 'consulta avatar', response );
+        this.avatarImage = `data:image/png;base64, ${response.image}`;
+      }
+      
+    })
   }
 
 }

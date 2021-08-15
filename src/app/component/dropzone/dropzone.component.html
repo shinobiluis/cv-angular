@@ -1,3 +1,9 @@
+<img  
+	*ngIf="avatarImage != ''" 
+	[src]="avatarImage | safeHtml" 
+	alt=""
+	class="avatarImage"
+>
 <!-- in app.component.html -->
 <ngx-dropzone [multiple]="false" (change)="onSelect($event)">
 	<ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
@@ -6,6 +12,6 @@
 	</ngx-dropzone-preview>
 </ngx-dropzone>
 
-<ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
+<!-- <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f">
     <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-</ngx-dropzone-image-preview>
+</ngx-dropzone-image-preview> -->

@@ -44,6 +44,7 @@ import {ToastModule} from 'primeng/toast';
 // dropzone para cargar archivos
 import { NgxDropzoneModule } from 'ngx-dropzone';
 import { DropzoneComponent } from './component/dropzone/dropzone.component';
+import { SafeHtmlPipe } from './safe-html.pipe';
 
 
 @NgModule({
@@ -68,7 +69,8 @@ import { DropzoneComponent } from './component/dropzone/dropzone.component';
     PlantillaComponent,
     DescargarComponent,
     FormPerfilComponent,
-    DropzoneComponent
+    DropzoneComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,

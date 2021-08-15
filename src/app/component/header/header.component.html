@@ -8,7 +8,17 @@
                 </figcaption>
             </figure>
             <div>
-                <p-avatar label="P" styleClass="p-mr-2" size="large" shape="circle" (click)="menu.toggle($event)"></p-avatar>
+                <ng-template [ngIf]="imageAvatar == null" [ngIfElse]="avatar">
+                    <p-avatar label="P" styleClass="p-mr-2" size="large" shape="circle" (click)="menu.toggle($event)"></p-avatar>
+                </ng-template>
+                <ng-template #avatar>
+                    <img  
+                        [src]="imageAvatar | safeHtml" 
+                        alt=""
+                        class="avatarImage"
+                        (click)="menu.toggle($event)"
+                    >
+                </ng-template>
                 <p-menu #menu [popup]="true" [model]="items"></p-menu>
             </div>
         </div>
