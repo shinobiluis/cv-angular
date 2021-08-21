@@ -2,18 +2,21 @@ import { AcutlizarAvatarFrontService } from './../../services/acutlizar-avatar-f
 import { UploadAvatarService } from './../../services/upload-avatar.service';
 // import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import {MessageService} from 'primeng/api';
 
 
 @Component({
   selector: 'app-dropzone',
   templateUrl: './dropzone.component.html',
-  styleUrls: ['./dropzone.component.css']
+  styleUrls: ['./dropzone.component.css'],
+  providers: [MessageService]
 })
 export class DropzoneComponent implements OnInit {
 
   constructor(
     private avatar: UploadAvatarService,
-    private updateAvatar: AcutlizarAvatarFrontService
+    private updateAvatar: AcutlizarAvatarFrontService,
+    private messageService: MessageService
   ) { }
   files: File[] = [];
   public avatarImage = './assets/avatar/avatar.png';
@@ -31,7 +34,7 @@ export class DropzoneComponent implements OnInit {
     console.log( 'cuerpo antes: ',formData );
     this.avatar.upload( formData )
       .subscribe((res:any) => {
-        console.log(res);
+        // console.log(res);
         // 
         this.avatarImage = `data:image/png;base64, ${res.image}`;
         this.updateAvatar.disparadorDeAvatar.emit(this.avatarImage);
@@ -39,6 +42,7 @@ export class DropzoneComponent implements OnInit {
         this.show = false;
         this.display = false;
         this.files = [];
+        this.showSuccess();
       });
   }
   
@@ -59,6 +63,14 @@ export class DropzoneComponent implements OnInit {
 
   showDialog() {
     this.display = true;
+  }
+
+  showSuccess() {
+    this.messageService.add({
+        severity:'success', 
+        summary: 'Guardado', 
+        detail: 'Foto de perfil guardado correctamente'
+      });
   }
 
 }

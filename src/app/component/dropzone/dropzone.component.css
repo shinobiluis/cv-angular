@@ -1,6 +1,7 @@
 .wrapperUploadAvatar{
     position: relative;
     display: inline-block;
+    padding: 20px;
 }
 .avatarImage{
     border-radius:50%;
